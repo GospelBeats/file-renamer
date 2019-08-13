@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>File Renamer</title>
+</head>
+<body>
+
+    <div class="container mt-5">
+
+        <div class="jumbotron mt-5">
+
+            <div class="row">
+                <div class="">
+                <h1 class="lead">File Renamer</h1>
+                </div>
+            </div>
+        <hr>
+        <br>
+
+        <div class="row">
+            <form class="col">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="fileName" aria-describedby="emailHelp" placeholder="">
+                  <small id="" class="form-text text-muted">Enter The Name Of Your File</small>
+                </div>
+                <select id="opt" class="form-control form-control-sm">
+                        <option>-</option>
+                        <option>_</option>
+                </select>
+                <small id="" class="form-text text-muted">Select Dash or Underscore</small>
+                <br>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="convertFileName" placeholder="">
+                </div>
+                <button type="button" class="btn btn-primary">Submit</button>
+            </form>
+
+            <div class="col">
+                    <ul class="border p-3 rounded" style="list-style-type: none">
+                        <li>Copy and paste a filename into the text box</li><br>
+                        <li>Replace the spaces with either an underscore or a dash</li><br>
+                        <li>Replace the spaces between the words in the filename</li>
+                    </ul>
+            </div> <!--directions -->
+
+            </div> <!--row-->
+        </div> <!--jumbotron-->
+    </div> <!--container-->
+
+<script>
+
+$(document).ready(function(){
+
+  $("button").click(function(){
+   
+        let fileName = $("#fileName").val();
+
+        if (fileName === "") {
+            alert("Please Enter A File Name");
+            $("#fileName").val("");
+        } else {
+
+        $("#fileName").val("");
+        convertString(fileName);
+
+        function convertString(str){
+
+        let option = $( "#opt option:selected" ).text();
+
+        let newStr = str.replace(/ /g, option);
+
+        $("#convertFileName").val(newStr);
+
+            } // if statement
+
+        } // convert string
+
+  }); // button click
+
+}); // document ready
+      
+</script>
+
+</body>
+</html>
