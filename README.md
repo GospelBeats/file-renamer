@@ -18,8 +18,8 @@ Deployed site: https://gospelbeats.github.io/file-renamer/
 
 
 ## Code
-
-`$(document).ready(function(){
+```
+$(document).ready(function(){
 
   $("button").click(function(){
    
@@ -47,6 +47,7 @@ Deployed site: https://gospelbeats.github.io/file-renamer/
 
   }); // button click
 
-}); // document ready`
+}); // document ready
+```
       
 
