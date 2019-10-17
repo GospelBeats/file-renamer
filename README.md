@@ -18,9 +18,8 @@ Deployed site: https://gospelbeats.github.io/file-renamer/
 
 
 ## Code
-`<script>
 
-$(document).ready(function(){
+`$(document).ready(function(){
 
   $("button").click(function(){
    
@@ -48,6 +47,6 @@ $(document).ready(function(){
 
   }); // button click
 
-}); // document ready
+}); // document ready`
       
-</script>`
+
